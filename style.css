@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #fbd3e9, #bb377d);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card, .sorpresa {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  max-width: 300px;
+}
+
+button {
+  margin-top: 20px;
+  background: #ff6fa1;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.sorpresa {
+  display: none;
+}
+
+.sorpresa img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 15px;
+}
