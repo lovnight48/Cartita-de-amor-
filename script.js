@@ -2,9 +2,9 @@ const texto = "Tengo algo especial preparado para ti...";
 let i = 0;
 
 const fotos = [
-  "img/IMG_20251106_164405_188.webp",
-    "img/IMG_20251111_201622_652.webp",
-      "img/IMG_20251113_222809_373.webp"
+  "IMG_20251106_164405_188.webp",
+    "IMG_20251111_201622_652.webp",
+      "IMG_20251113_222809_373.webp"
       ];
 
       let indiceFoto = 0;
