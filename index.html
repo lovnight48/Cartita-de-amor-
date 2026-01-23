@@ -7,25 +7,61 @@
       </head>
       <body>
 
-        <div class="card" id="card">
-            <h1>Hola 💗</h1>
-                <p id="typing-text"></p>
-                    <button onclick="mostrarSorpresa()">Abrir sorpresa</button>
-                      </div>
+        <!-- Pantalla 1 -->
+          <section class="screen screen-intro" id="intro">
+              <h1 class="title">Hola amor 💗</h1>
+                  <p id="typing-text" class="intro-text"></p>
+                      <button class="main-btn" onclick="mostrarGaleria()">Ver recuerdos</button>
+                        </section>
 
-                        <div class="sorpresa" id="sorpresa">
-                            <h2>Esto es solo para ti 🌸</h2>
-                                <p class="fade-text">Cada recuerdo contigo es especial</p>
+                          <!-- Pantalla 2 -->
+                            <section class="screen screen-galeria" id="galeria">
+                                <div class="polaroid-container">
 
-                                    <div class="polaroid-container">
-                                          <img id="galeria" src="IMG_20251106_164405_188.webp" class="polaroid">
-                                              </div>
-
-                                                  <p class="extra-text">Gracias por existir en mi vida 💞</p>
+                                      <div class="polaroid">
+                                              <img src="IMG_20251106_164405_188.webp">
                                                     </div>
 
-                                                      <div id="hearts-container"></div>
+                                                          <div class="polaroid">
+                                                                  <img src="IMG_20251111_201622_652.webp">
+                                                                        </div>
 
-                                                        <script src="script.js"></script>
-                                                        </body>
-                                                        </html>
+                                                                              <div class="polaroid">
+                                                                                      <img src="IMG_20251113_222809_373.webp">
+                                                                                            </div>
+
+                                                                                                </div>
+
+                                                                                                    <button class="main-btn next-btn" onclick="mostrarTexto()">Siguiente 💞</button>
+                                                                                                      </section>
+
+                                                                                                        <!-- Pantalla 3 -->
+                                                                                                          <section class="screen screen-texto" id="texto">
+                                                                                                              <div class="glass">
+
+                                                                                                                    <h2 class="fade-in">Esto es solo para ti 🌸</h2>
+
+                                                                                                                          <p class="sentimental fade-in delay-1">
+                                                                                                                                  No sé cómo decir todo lo que siento con palabras,
+                                                                                                                                          pero quería crear algo pequeño y bonito para recordarte
+                                                                                                                                                  lo importante que eres para mí.
+                                                                                                                                                        </p>
+
+                                                                                                                                                              <p class="sentimental fade-in delay-2">
+                                                                                                                                                                      Cada momento contigo se queda guardado en mi corazón,
+                                                                                                                                                                              y ojalá esta sorpresa te saque una sonrisa
+                                                                                                                                                                                      como tú me sacas una a mí todos los días.
+                                                                                                                                                                                            </p>
+
+                                                                                                                                                                                                  <p class="sentimental highlight fade-in delay-3">
+                                                                                                                                                                                                          Gracias por existir en mi vida 💞
+                                                                                                                                                                                                                </p>
+
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                      </section>
+
+                                                                                                                                                                                                                        <div id="hearts-container"></div>
+
+                                                                                                                                                                                                                          <script src="script.js"></script>
+                                                                                                                                                                                                                          </body>
+                                                                                                                                                                                                                          </html>
