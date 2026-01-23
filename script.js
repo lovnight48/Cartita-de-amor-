@@ -2,9 +2,9 @@ const texto = "Tengo algo especial preparado para ti...";
 let i = 0;
 
 const fotos = [
-  "IMG_20251111_201622_652.webp",
-    "IMG_20251113_222809_373.webp",
-      "IMG_20251106_164405_188.webp"
+  "img/IMG_20251106_164405_188.webp",
+    "img/IMG_20251111_201622_652.webp",
+      "img/IMG_20251113_222809_373.webp"
       ];
 
       let indiceFoto = 0;
@@ -19,8 +19,8 @@ const fotos = [
 
                       window.onload = () => {
                         escribirTexto();
-                          setInterval(crearCorazon, 600);
-                            setInterval(cambiarFoto, 5000);
+                          setInterval(crearCorazon, 700);
+                            setInterval(cambiarFoto, 5500);
                             };
 
                             function mostrarSorpresa() {
@@ -44,12 +44,12 @@ const fotos = [
                                                         heart.classList.add("heart");
 
                                                           heart.style.left = Math.random() * 100 + "vw";
-                                                            heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+                                                            heart.style.animationDuration = (5 + Math.random() * 5) + "s";
                                                               heart.style.opacity = Math.random();
 
                                                                 document.getElementById("hearts-container").appendChild(heart);
 
                                                                   setTimeout(() => {
                                                                       heart.remove();
-                                                                        }, 7000);
+                                                                        }, 8000);
                                                                         }
