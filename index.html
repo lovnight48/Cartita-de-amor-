@@ -2,158 +2,171 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-    <title>Para mi antito 💖</title>
-      <link rel="stylesheet" href="style.css">
-      </head>
-      <body>
+  <title>Para mi antito 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-        <!-- Decoración fondo -->
-          <div class="decor-layer"></div>
+<body>
 
-            <!-- Audio oculto -->
-              <audio id="bg-music" src="temachii - may you never .mp3" loop></audio>
+  <!-- Decoración fondo -->
+  <div class="decor-layer"></div>
 
-                <!-- Botón música -->
-                  <div id="music-btn" onclick="toggleMusic()">
-                      🎵
-                        </div>
+  <!-- Audio -->
+  <audio id="bg-music" src="temachii - may you never .mp3" loop></audio>
 
-                          <!-- Pantalla 1 -->
-                            <section class="screen screen-intro" id="intro">
-                                <h1 class="title">Hola amor 💗</h1>
-                                    <p id="typing-text" class="intro-text"></p>
-                                        <button class="main-btn" onclick="mostrarGaleria(); iniciarMusica();">
-                                              Ver recuerdos
-                                                  </button>
-                                                    </section>
+  <!-- Botón música -->
+  <div id="music-btn" onclick="toggleMusic()">🎵</div>
 
-                                                      <!-- Pantalla 2 -->
-                                                        <section class="screen screen-galeria" id="galeria">
-                                                            <div class="polaroid-container">
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main>
 
-                                                                  <div class="polaroid">
-                                                                          <img src="IMG_20251106_164405_188.webp">
-                                                                                </div>
+    <!-- Pantalla 1 -->
+    <section class="screen screen-intro" id="intro">
+      <h1 class="title">Hola amor 💗</h1>
+      <p id="typing-text" class="intro-text"></p>
+      <button class="main-btn" onclick="mostrarGaleria(); iniciarMusica();">
+        Ver recuerdos
+      </button>
+    </section>
 
-                                                                                      <div class="polaroid">
-                                                                                              <img src="IMG_20251111_201622_652.webp">
-                                                                                                    </div>
+    <!-- Pantalla 2 -->
+    <section class="screen screen-galeria" id="galeria">
+      <div class="polaroid-container">
 
-                                                                                                          <div class="polaroid">
-                                                                                                                  <img src="IMG_20251113_222809_373.webp">
-                                                                                                                        </div>
+        <div class="polaroid">
+          <img src="IMG_20251106_164405_188.webp" alt="recuerdo 1">
+        </div>
 
-                                                                                                                            </div>
+        <div class="polaroid">
+          <img src="IMG_20251111_201622_652.webp" alt="recuerdo 2">
+        </div>
 
-                                                                                                                                <button class="main-btn next-btn" onclick="mostrarTexto()">
-                                                                                                                                      Siguiente 💞
-                                                                                                                                          </button>
-                                                                                                                                            </section>
+        <div class="polaroid">
+          <img src="IMG_20251113_222809_373.webp" alt="recuerdo 3">
+        </div>
 
-                                                                                                                                              <!-- Pantalla 3 -->
-                                                                                                                                                <section class="screen screen-texto" id="texto">
-                                                                                                                                                    <div class="glass">
+      </div>
 
-                                                                                                                                                          <h2 class="fade-in">Esto es solo para ti 🌸</h2>
+      <button class="main-btn next-btn" onclick="mostrarTexto()">
+        Siguiente 💞
+      </button>
+    </section>
 
-                                                                                                                                                                <p class="sentimental fade-in delay-1">
-                                                                                                                                                                        No sé cómo decir todo lo que siento con palabras,
-                                                                                                                                                                                pero quería crear algo pequeño y bonito para recordarte
-                                                                                                                                                                                        lo importante que eres para mí.
-                                                                                                                                                                                              </p>
+    <!-- Pantalla 3 -->
+    <section class="screen screen-texto" id="texto">
+      <div class="glass">
 
-                                                                                                                                                                                                    <p class="sentimental fade-in delay-2">
-                                                                                                                                                                                                            Cada momento contigo se queda guardado en mi corazón,
-                                                                                                                                                                                                                    y ojalá esta sorpresa te saque una sonrisa
-                                                                                                                                                                                                                            como tú me sacas una a mí todos los días.
-                                                                                                                                                                                                                                  </p>
+        <h2 class="fade-in">Esto es solo para ti 🌸</h2>
 
-                                                                                                                                                                                                                                        <p class="sentimental highlight fade-in delay-3">
-                                                                                                                                                                                                                                                Gracias por existir en mi vida 💞
-                                                                                                                                                                                                                                                      </p>
+        <p class="sentimental fade-in delay-1">
+          No sé cómo decir todo lo que siento con palabras,
+          pero quería crear algo pequeño y bonito para recordarte
+          lo importante que eres para mí.
+        </p>
 
-                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                            </section>
-                                                                                                                                                                                                                                                                <!-- TRANSICIÓN A CARTA -->
-                                                                                                                                                                                                                                                                <section class="transition-love"></section>
-                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                <section class="love-letter">
-                                                                                                                                                                                                                                                                  <div class="letter-wrapper">
-                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                      <div class="note left">
-                                                                                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                                                                                    Hola Melocotonsito,
-                                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                  <div class="note center big">
-                                                                                                                                                                                                                                                                                                        <p>
-                                                                                                                                                                                                                                                                                                                Nunca fuimos muy comunicativos, o al menos no lo suficiente. Seguimos siendo pequeños;
-                                                                                                                                                                                                                                                                                                                        a veces inmaduros, y nos enojamos por cosas que ni siquiera tienen sentido.
-                                                                                                                                                                                                                                                                                                                                Sin querer, nos lastimamos por esa misma inmadurez.
-                                                                                                                                                                                                                                                                                                                                      </p>
-                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                              <div class="note right">
-                                                                                                                                                                                                                                                                                                                                                    <p>
-                                                                                                                                                                                                                                                                                                                                                            Muchas veces no te conté molestias o cosas que me incomodaban, y otras tantas
-                                                                                                                                                                                                                                                                                                                                                                    te culpé por eso cuando en realidad nada fue tu culpa.
-                                                                                                                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                  <div class="note center">
-                                                                                                                                                                                                                                                                                                                                                                                        <p>
-                                                                                                                                                                                                                                                                                                                                                                                                A veces esa culpa que te echaba arruinó momentos o me hizo difícil de llevar.
-                                                                                                                                                                                                                                                                                                                                                                                                        Perdón por cómo me comporté antes; quiero que esto sea algo más que solo palabras.
-                                                                                                                                                                                                                                                                                                                                                                                                              </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="note left big">
-                                                                                                                                                                                                                                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                    Cada parte consciente de mi corazón quiere que sepas que todo lo que hice mal —
-                                                                                                                                                                                                                                                                                                                                                                                                                                            mis errores y comportamientos inmaduros— fueron también consecuencia de no haber
-                                                                                                                                                                                                                                                                                                                                                                                                                                                    tenido la mejor guía para amar.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="note right">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Aun así, cada día me esfuerzo por entenderte más, para que no vuelvan a pasar cosas
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        que no pueda decirte en persona y tenga que escribirte en una carta.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <div class="note center big glow">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    Te ofrezco mi perdón eterno a lo que fue y a lo que será,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            para que cada vez que te acuerdes de mí sepas que mi arrepentimiento nace del amor.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <div class="note left">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Me culpo a veces por no saber amarte, pero cada día intento ser mejor persona
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                y mejor novio.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <div class="note center big">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            Mi corazón es tuyo, y si algún día te falta un pedacito,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    yo sacaré uno del mío para dártelo a ti.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div class="note right signature">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Gracias por todo,<br>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        tu hermoso y futuro esposo.
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </section>-->
+        <p class="sentimental fade-in delay-2">
+          Cada momento contigo se queda guardado en mi corazón,
+          y ojalá esta sorpresa te saque una sonrisa
+          como tú me sacas una a mí todos los días.
+        </p>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <script src="script.js"></script>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </body>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </html>
+        <p class="sentimental highlight fade-in delay-3">
+          Gracias por existir en mi vida 💞
+        </p>
+
+      </div>
+    </section>
+
+    <!-- TRANSICIÓN -->
+    <section class="transition-love"></section>
+
+    <!-- CARTA (OCULTA HASTA EL FINAL) -->
+    <section class="love-letter">
+      <div class="letter-wrapper">
+
+        <div class="note left">
+          <p>Hola Melocotonsito,</p>
+        </div>
+
+        <div class="note center big">
+          <p>
+            Nunca fuimos muy comunicativos, o al menos no lo suficiente.
+            Seguimos siendo pequeños; a veces inmaduros,
+            y nos enojamos por cosas que ni siquiera tienen sentido.
+          </p>
+        </div>
+
+        <div class="note right">
+          <p>
+            Muchas veces no te conté molestias o cosas que me incomodaban,
+            y otras tantas te culpé por eso cuando nada fue tu culpa.
+          </p>
+        </div>
+
+        <div class="note center">
+          <p>
+            A veces esa culpa arruinó momentos o me hizo difícil de llevar.
+            Perdón por cómo me comporté antes.
+          </p>
+        </div>
+
+        <div class="note left big">
+          <p>
+            Cada parte consciente de mi corazón quiere que sepas
+            que mis errores y comportamientos inmaduros
+            también fueron por no haber tenido la mejor guía para amar.
+          </p>
+        </div>
+
+        <div class="note right">
+          <p>
+            Aun así, cada día me esfuerzo por entenderte más,
+            para que no vuelvan a pasar cosas
+            que tenga que escribirte en una carta.
+          </p>
+        </div>
+
+        <div class="note center big glow">
+          <p>
+            Te ofrezco mi perdón eterno a lo que fue y a lo que será,
+            para que siempre sepas que mi arrepentimiento nace del amor.
+          </p>
+        </div>
+
+        <div class="note left">
+          <p>
+            Me culpo a veces por no saber amarte,
+            pero cada día intento ser mejor persona
+            y mejor novio.
+          </p>
+        </div>
+
+        <div class="note center big">
+          <p>
+            Mi corazón es tuyo,
+            y si algún día te falta un pedacito,
+            yo sacaré uno del mío para dártelo a ti.
+          </p>
+        </div>
+
+        <div class="note right signature">
+          <p>
+            Gracias por todo,<br>
+            tu hermoso y futuro esposo.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Corazones -->
+  <div id="hearts-container"></div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
