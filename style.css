@@ -1,13 +1,19 @@
-body {
+/* ===== RESET & BODY ===== */
+* {
+  box-sizing: border-box;
+  }
+
+  body {
     margin: 0;
       font-family: 'Arial', sans-serif;
         background: linear-gradient(-45deg, #fde2e4, #f9c5d1, #fbc2eb, #fad0c4);
           background-size: 400% 400%;
             animation: gradientMove 15s ease infinite;
-              height: 100vh;
-                overflow: hidden;
+              min-height: 100vh;
+                overflow-x: hidden;
                 }
 
+                /* ===== DECORACIÓN FONDO ===== */
                 .decor-layer {
                   position: fixed;
                     top: 0;
@@ -24,284 +30,303 @@ body {
                                                 z-index: 0;
                                                 }
 
+                                                /* ===== BOTÓN MÚSICA ===== */
                                                 #music-btn {
                                                   position: fixed;
-                                                    top: 20px;
-                                                      right: 20px;
-                                                        width: 48px;
-                                                          height: 48px;
+                                                    top: 16px;
+                                                      right: 16px;
+                                                        width: 46px;
+                                                          height: 46px;
                                                             border-radius: 50%;
                                                               background: rgba(255,255,255,0.35);
                                                                 backdrop-filter: blur(10px);
-                                                                  -webkit-backdrop-filter: blur(10px);
-                                                                    display: flex;
-                                                                      align-items: center;
-                                                                        justify-content: center;
-                                                                          font-size: 22px;
-                                                                            cursor: pointer;
-                                                                              box-shadow: 0 8px 22px rgba(255,111,145,0.45);
-                                                                                transition: transform 0.4s ease, box-shadow 0.4s ease;
-                                                                                  z-index: 5;
-                                                                                  }
+                                                                  display: flex;
+                                                                    align-items: center;
+                                                                      justify-content: center;
+                                                                        font-size: 22px;
+                                                                          cursor: pointer;
+                                                                            box-shadow: 0 8px 22px rgba(255,111,145,0.45);
+                                                                              transition: transform 0.4s ease, box-shadow 0.4s ease;
+                                                                                z-index: 5;
+                                                                                }
 
-                                                                                  #music-btn:hover {
-                                                                                    transform: scale(1.15);
-                                                                                      box-shadow: 0 14px 35px rgba(255,111,145,0.65);
-                                                                                      }
+                                                                                #music-btn:hover {
+                                                                                  transform: scale(1.15);
+                                                                                    box-shadow: 0 14px 35px rgba(255,111,145,0.65);
+                                                                                    }
 
-                                                                                      .screen {
-                                                                                        position: absolute;
-                                                                                          width: 100%;
-                                                                                            height: 100%;
-                                                                                              display: flex;
-                                                                                                flex-direction: column;
-                                                                                                  justify-content: center;
-                                                                                                    align-items: center;
-                                                                                                      text-align: center;
-                                                                                                        padding: 40px;
-                                                                                                          box-sizing: border-box;
-                                                                                                            transition: opacity 1.5s ease;
-                                                                                                              z-index: 1;
+                                                                                    /* ===== SCREENS ===== */
+                                                                                    .screen {
+                                                                                      position: absolute;
+                                                                                        width: 100%;
+                                                                                          min-height: 100vh;
+                                                                                            display: flex;
+                                                                                              flex-direction: column;
+                                                                                                justify-content: center;
+                                                                                                  align-items: center;
+                                                                                                    text-align: center;
+                                                                                                      padding: 24px;
+                                                                                                        transition: opacity 1.5s ease;
+                                                                                                          z-index: 1;
+                                                                                                          }
+
+                                                                                                          .screen-intro { opacity: 1; }
+                                                                                                          .screen-galeria,
+                                                                                                          .screen-texto {
+                                                                                                            opacity: 0;
+                                                                                                              pointer-events: none;
                                                                                                               }
 
-                                                                                                              .screen-intro { opacity: 1; }
-                                                                                                              .screen-galeria,
-                                                                                                              .screen-texto {
-                                                                                                                opacity: 0;
-                                                                                                                  pointer-events: none;
-                                                                                                                  }
+                                                                                                              /* ===== INTRO ===== */
+                                                                                                              .title {
+                                                                                                                color: #ff6f91;
+                                                                                                                  font-size: clamp(32px, 6vw, 46px);
+                                                                                                                    margin-bottom: 12px;
+                                                                                                                      text-shadow: 0 0 18px rgba(255,111,145,0.45);
+                                                                                                                      }
 
-                                                                                                                  .title {
-                                                                                                                    color: #ff6f91;
-                                                                                                                      font-size: 46px;
-                                                                                                                        margin-bottom: 10px;
-                                                                                                                          text-shadow: 0 0 18px rgba(255,111,145,0.45);
-                                                                                                                          }
+                                                                                                                      .intro-text {
+                                                                                                                        color: #555;
+                                                                                                                          font-size: clamp(18px, 4.5vw, 22px);
+                                                                                                                            max-width: 480px;
+                                                                                                                              margin: 10px auto 25px;
+                                                                                                                              }
 
-                                                                                                                          .intro-text {
-                                                                                                                            color: #555;
-                                                                                                                              font-size: 22px;
-                                                                                                                                max-width: 480px;
-                                                                                                                                  margin: 10px auto 25px;
-                                                                                                                                  }
+                                                                                                                              /* ===== BOTONES ===== */
+                                                                                                                              .main-btn {
+                                                                                                                                background: linear-gradient(135deg, #ff9a9e, #fecfef);
+                                                                                                                                  border: none;
+                                                                                                                                    padding: 16px 32px;
+                                                                                                                                      border-radius: 40px;
+                                                                                                                                        color: #fff;
+                                                                                                                                          font-size: 18px;
+                                                                                                                                            cursor: pointer;
+                                                                                                                                              box-shadow: 0 8px 22px rgba(255,111,145,0.35);
+                                                                                                                                                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                                                                                                                                                }
 
-                                                                                                                                  .main-btn {
-                                                                                                                                    background: linear-gradient(135deg, #ff9a9e, #fecfef);
-                                                                                                                                      border: none;
-                                                                                                                                        padding: 18px 34px;
-                                                                                                                                          border-radius: 40px;
-                                                                                                                                            color: #fff;
-                                                                                                                                              font-size: 18px;
-                                                                                                                                                cursor: pointer;
-                                                                                                                                                  box-shadow: 0 8px 22px rgba(255,111,145,0.35);
-                                                                                                                                                    transition: transform 0.4s ease, box-shadow 0.4s ease;
+                                                                                                                                                .main-btn:hover {
+                                                                                                                                                  transform: scale(1.1);
+                                                                                                                                                    box-shadow: 0 14px 35px rgba(255,111,145,0.55);
                                                                                                                                                     }
 
-                                                                                                                                                    .main-btn:hover {
-                                                                                                                                                      transform: scale(1.12);
-                                                                                                                                                        box-shadow: 0 14px 35px rgba(255,111,145,0.55);
-                                                                                                                                                        }
+                                                                                                                                                    .next-btn {
+                                                                                                                                                      margin-top: 32px;
+                                                                                                                                                      }
 
-                                                                                                                                                        .next-btn {
-                                                                                                                                                          margin-top: 40px;
-                                                                                                                                                          }
+                                                                                                                                                      /* ===== GALERÍA ===== */
+                                                                                                                                                      .polaroid-container {
+                                                                                                                                                        display: flex;
+                                                                                                                                                          gap: 30px;
+                                                                                                                                                            flex-wrap: wrap;
+                                                                                                                                                              justify-content: center;
+                                                                                                                                                              }
 
-                                                                                                                                                          .polaroid-container {
-                                                                                                                                                            display: flex;
-                                                                                                                                                              gap: 50px;
-                                                                                                                                                                flex-wrap: wrap;
-                                                                                                                                                                  justify-content: center;
-                                                                                                                                                                  }
+                                                                                                                                                              .polaroid {
+                                                                                                                                                                background: #fff;
+                                                                                                                                                                  padding: 18px 18px 34px;
+                                                                                                                                                                    border-radius: 18px;
+                                                                                                                                                                      box-shadow:
+                                                                                                                                                                          0 18px 40px rgba(0,0,0,0.25),
+                                                                                                                                                                              0 0 25px rgba(255,182,193,0.35);
+                                                                                                                                                                                transform: rotate(-4deg);
+                                                                                                                                                                                  animation: float 6s ease-in-out infinite;
+                                                                                                                                                                                  }
 
-                                                                                                                                                                  .polaroid {
-                                                                                                                                                                    background: #fff;
-                                                                                                                                                                      padding: 20px 20px 40px;
-                                                                                                                                                                        border-radius: 18px;
-                                                                                                                                                                          box-shadow:
-                                                                                                                                                                              0 18px 40px rgba(0,0,0,0.25),
-                                                                                                                                                                                  0 0 25px rgba(255,182,193,0.35);
-                                                                                                                                                                                    transform: rotate(-4deg);
-                                                                                                                                                                                      animation: float 6s ease-in-out infinite;
+                                                                                                                                                                                  .polaroid:nth-child(2) {
+                                                                                                                                                                                    transform: rotate(3deg);
+                                                                                                                                                                                      animation-delay: 1.5s;
                                                                                                                                                                                       }
 
-                                                                                                                                                                                      .polaroid:nth-child(2) {
-                                                                                                                                                                                        transform: rotate(3deg);
-                                                                                                                                                                                          animation-delay: 1.5s;
+                                                                                                                                                                                      .polaroid:nth-child(3) {
+                                                                                                                                                                                        transform: rotate(-2deg);
+                                                                                                                                                                                          animation-delay: 3s;
                                                                                                                                                                                           }
 
-                                                                                                                                                                                          .polaroid:nth-child(3) {
-                                                                                                                                                                                            transform: rotate(-2deg);
-                                                                                                                                                                                              animation-delay: 3s;
-                                                                                                                                                                                              }
+                                                                                                                                                                                          .polaroid img {
+                                                                                                                                                                                            width: min(260px, 80vw);
+                                                                                                                                                                                              height: auto;
+                                                                                                                                                                                                border-radius: 10px;
+                                                                                                                                                                                                }
 
-                                                                                                                                                                                              .polaroid img {
-                                                                                                                                                                                                width: 280px;
-                                                                                                                                                                                                  height: auto;
-                                                                                                                                                                                                    border-radius: 10px;
-                                                                                                                                                                                                    }
+                                                                                                                                                                                                /* ===== TEXTO GLASS ===== */
+                                                                                                                                                                                                .glass {
+                                                                                                                                                                                                  background: rgba(255,255,255,0.25);
+                                                                                                                                                                                                    backdrop-filter: blur(12px);
+                                                                                                                                                                                                      border-radius: 28px;
+                                                                                                                                                                                                        padding: 32px;
+                                                                                                                                                                                                          max-width: 600px;
+                                                                                                                                                                                                            box-shadow:
+                                                                                                                                                                                                                0 15px 45px rgba(0,0,0,0.15),
+                                                                                                                                                                                                                    0 0 30px rgba(255,182,193,0.45);
+                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                    .glass {
-                                                                                                                                                                                                      background: rgba(255,255,255,0.25);
-                                                                                                                                                                                                        backdrop-filter: blur(12px);
-                                                                                                                                                                                                          -webkit-backdrop-filter: blur(12px);
-                                                                                                                                                                                                            border-radius: 30px;
-                                                                                                                                                                                                              padding: 50px;
-                                                                                                                                                                                                                max-width: 580px;
-                                                                                                                                                                                                                  box-shadow:
-                                                                                                                                                                                                                      0 15px 45px rgba(0,0,0,0.15),
-                                                                                                                                                                                                                          0 0 30px rgba(255,182,193,0.45);
-                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                    .sentimental {
+                                                                                                                                                                                                                      color: #444;
+                                                                                                                                                                                                                        font-size: clamp(18px, 4.5vw, 22px);
+                                                                                                                                                                                                                          line-height: 1.5;
+                                                                                                                                                                                                                            margin: 18px 0;
+                                                                                                                                                                                                                            }
 
-                                                                                                                                                                                                                          .sentimental {
-                                                                                                                                                                                                                            color: #444;
-                                                                                                                                                                                                                              font-size: 22px;
-                                                                                                                                                                                                                                line-height: 1.5;
-                                                                                                                                                                                                                                  margin: 20px 0;
-                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                            .highlight {
+                                                                                                                                                                                                                              color: #ff6f91;
+                                                                                                                                                                                                                                font-weight: bold;
+                                                                                                                                                                                                                                  font-size: clamp(20px, 5vw, 24px);
+                                                                                                                                                                                                                                    text-shadow: 0 0 15px rgba(255,111,145,0.6);
+                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                  .highlight {
-                                                                                                                                                                                                                                    color: #ff6f91;
-                                                                                                                                                                                                                                      font-weight: bold;
-                                                                                                                                                                                                                                        font-size: 24px;
-                                                                                                                                                                                                                                          text-shadow: 0 0 15px rgba(255,111,145,0.6);
+                                                                                                                                                                                                                                    /* ===== ANIMACIONES TEXTO ===== */
+                                                                                                                                                                                                                                    .fade-in {
+                                                                                                                                                                                                                                      opacity: 0;
+                                                                                                                                                                                                                                        transform: translateY(25px);
+                                                                                                                                                                                                                                          animation: fadeUp 1.4s ease forwards;
                                                                                                                                                                                                                                           }
 
-                                                                                                                                                                                                                                          .fade-in {
-                                                                                                                                                                                                                                            opacity: 0;
-                                                                                                                                                                                                                                              transform: translateY(25px);
-                                                                                                                                                                                                                                                animation: fadeUp 1.4s ease forwards;
-                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                          .delay-1 { animation-delay: 0.5s; }
+                                                                                                                                                                                                                                          .delay-2 { animation-delay: 1.2s; }
+                                                                                                                                                                                                                                          .delay-3 { animation-delay: 1.9s; }
 
-                                                                                                                                                                                                                                                .delay-1 { animation-delay: 0.5s; }
-                                                                                                                                                                                                                                                .delay-2 { animation-delay: 1.2s; }
-                                                                                                                                                                                                                                                .delay-3 { animation-delay: 1.9s; }
+                                                                                                                                                                                                                                          /* ===== CORAZONES ===== */
+                                                                                                                                                                                                                                          #hearts-container {
+                                                                                                                                                                                                                                            position: fixed;
+                                                                                                                                                                                                                                              width: 100%;
+                                                                                                                                                                                                                                                height: 100%;
+                                                                                                                                                                                                                                                  pointer-events: none;
+                                                                                                                                                                                                                                                    overflow: hidden;
+                                                                                                                                                                                                                                                      z-index: 2;
+                                                                                                                                                                                                                                                      }
 
-                                                                                                                                                                                                                                                #hearts-container {
-                                                                                                                                                                                                                                                  position: absolute;
-                                                                                                                                                                                                                                                    width: 100%;
-                                                                                                                                                                                                                                                      height: 100%;
-                                                                                                                                                                                                                                                        pointer-events: none;
-                                                                                                                                                                                                                                                          overflow: hidden;
-                                                                                                                                                                                                                                                            z-index: 2;
-                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                      .heart {
+                                                                                                                                                                                                                                                        position: absolute;
+                                                                                                                                                                                                                                                          width: 22px;
+                                                                                                                                                                                                                                                            height: 22px;
+                                                                                                                                                                                                                                                              background: pink;
+                                                                                                                                                                                                                                                                transform: rotate(45deg);
+                                                                                                                                                                                                                                                                  animation: floatUp 7s linear infinite;
+                                                                                                                                                                                                                                                                    box-shadow: 0 0 15px rgba(255,182,193,0.7);
+                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                            .heart {
-                                                                                                                                                                                                                                                              position: absolute;
-                                                                                                                                                                                                                                                                width: 22px;
-                                                                                                                                                                                                                                                                  height: 22px;
-                                                                                                                                                                                                                                                                    background: pink;
-                                                                                                                                                                                                                                                                      transform: rotate(45deg);
-                                                                                                                                                                                                                                                                        animation: floatUp 7s linear infinite;
-                                                                                                                                                                                                                                                                          box-shadow: 0 0 15px rgba(255,182,193,0.7);
-                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                    .heart::before,
+                                                                                                                                                                                                                                                                    .heart::after {
+                                                                                                                                                                                                                                                                      content: '';
+                                                                                                                                                                                                                                                                        width: 22px;
+                                                                                                                                                                                                                                                                          height: 22px;
+                                                                                                                                                                                                                                                                            background: pink;
+                                                                                                                                                                                                                                                                              border-radius: 50%;
+                                                                                                                                                                                                                                                                                position: absolute;
+                                                                                                                                                                                                                                                                                }
 
-                                                                                                                                                                                                                                                                          .heart::before,
-                                                                                                                                                                                                                                                                          .heart::after {
-                                                                                                                                                                                                                                                                            content: '';
-                                                                                                                                                                                                                                                                              width: 22px;
-                                                                                                                                                                                                                                                                                height: 22px;
-                                                                                                                                                                                                                                                                                  background: pink;
-                                                                                                                                                                                                                                                                                    border-radius: 50%;
-                                                                                                                                                                                                                                                                                      position: absolute;
+                                                                                                                                                                                                                                                                                .heart::before { top: -11px; left: 0; }
+                                                                                                                                                                                                                                                                                .heart::after { left: -11px; top: 0; }
+
+                                                                                                                                                                                                                                                                                /* ===== TRANSICIÓN A CARTA ===== */
+                                                                                                                                                                                                                                                                                .transition-love {
+                                                                                                                                                                                                                                                                                  height: 120px;
+                                                                                                                                                                                                                                                                                    background: linear-gradient(to bottom, transparent, #ffd6e8);
+                                                                                                                                                                                                                                                                                      filter: blur(4px);
                                                                                                                                                                                                                                                                                       }
 
-                                                                                                                                                                                                                                                                                      .heart::before { top: -11px; left: 0; }
-                                                                                                                                                                                                                                                                                      .heart::after { left: -11px; top: 0; }
+                                                                                                                                                                                                                                                                                      /* ===== CARTA ===== */
+                                                                                                                                                                                                                                                                                      .love-letter {
+                                                                                                                                                                                                                                                                                        position: relative;
+                                                                                                                                                                                                                                                                                          z-index: 3;
+                                                                                                                                                                                                                                                                                            background: linear-gradient(180deg, #ffd6e8, #ffeaf4);
+                                                                                                                                                                                                                                                                                              padding: 70px 16px;
+                                                                                                                                                                                                                                                                                              }
 
-                                                                                                                                                                                                                                                                                      @keyframes gradientMove {
-                                                                                                                                                                                                                                                                                        0% { background-position: 0% 50%; }
-                                                                                                                                                                                                                                                                                          50% { background-position: 100% 50%; }
-                                                                                                                                                                                                                                                                                            100% { background-position: 0% 50%; }
-                                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                              .letter-wrapper {
+                                                                                                                                                                                                                                                                                                max-width: 900px;
+                                                                                                                                                                                                                                                                                                  margin: auto;
+                                                                                                                                                                                                                                                                                                    display: flex;
+                                                                                                                                                                                                                                                                                                      flex-direction: column;
+                                                                                                                                                                                                                                                                                                        gap: 28px;
+                                                                                                                                                                                                                                                                                                        }
 
-                                                                                                                                                                                                                                                                                            @keyframes fadeUp {
-                                                                                                                                                                                                                                                                                              from { opacity: 0; transform: translateY(25px); }
-                                                                                                                                                                                                                                                                                                to { opacity: 1; transform: translateY(0); }
-                                                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                                                                        .note {
+                                                                                                                                                                                                                                                                                                          background: rgba(255,255,255,0.75);
+                                                                                                                                                                                                                                                                                                            padding: 22px 26px;
+                                                                                                                                                                                                                                                                                                              border-radius: 22px;
+                                                                                                                                                                                                                                                                                                                font-size: 1.05em;
+                                                                                                                                                                                                                                                                                                                  line-height: 1.6;
+                                                                                                                                                                                                                                                                                                                    box-shadow: 0 20px 40px rgba(255,105,180,0.15);
+                                                                                                                                                                                                                                                                                                                      backdrop-filter: blur(6px);
+                                                                                                                                                                                                                                                                                                                        animation: floatIn 1s ease both;
+                                                                                                                                                                                                                                                                                                                        }
 
-                                                                                                                                                                                                                                                                                                @keyframes floatUp {
-                                                                                                                                                                                                                                                                                                  0% { bottom: -40px; opacity: 1; }
-                                                                                                                                                                                                                                                                                                    100% { bottom: 100%; opacity: 0; }
-                                                                                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                                                                                                        .note.left {
+                                                                                                                                                                                                                                                                                                                          align-self: flex-start;
+                                                                                                                                                                                                                                                                                                                            transform: rotate(-1.5deg);
+                                                                                                                                                                                                                                                                                                                              max-width: 100%;
+                                                                                                                                                                                                                                                                                                                              }
 
-                                                                                                                                                                                                                                                                                                    @keyframes float {
-                                                                                                                                                                                                                                                                                                      0% { transform: translateY(0) rotate(-4deg); }
-                                                                                                                                                                                                                                                                                                        50% { transform: translateY(-18px) rotate(-4deg); }
-                                                                                                                                                                                                                                                                                                          100% { transform: translateY(0) rotate(-4deg); }
-                                                                                                                                                                                                                                                                                                          }
+                                                                                                                                                                                                                                                                                                                              .note.right {
+                                                                                                                                                                                                                                                                                                                                align-self: flex-end;
+                                                                                                                                                                                                                                                                                                                                  transform: rotate(1.5deg);
+                                                                                                                                                                                                                                                                                                                                    max-width: 100%;
+                                                                                                                                                                                                                                                                                                                                    }
 
-                                                                                                                                                                                                                                                                                                          @keyframes decorFloat {
-                                                                                                                                                                                                                                                                                                            0% { transform: translateY(0); }
-                                                                                                                                                                                                                                                                                                              100% { transform: translateY(-40px); }
-                                                                                                                                                                                                                                                                                                              }
-.transition-love {
-    height: 120px;
-      background: linear-gradient(to bottom, transparent, #ffd6e8);
-        filter: blur(4px);
-        }
+                                                                                                                                                                                                                                                                                                                                    .note.center {
+                                                                                                                                                                                                                                                                                                                                      align-self: center;
+                                                                                                                                                                                                                                                                                                                                        text-align: center;
+                                                                                                                                                                                                                                                                                                                                          max-width: 100%;
+                                                                                                                                                                                                                                                                                                                                          }
 
-        .love-letter {
-          background: linear-gradient(180deg, #ffd6e8, #ffeaf4);
-            padding: 80px 20px;
-            }
+                                                                                                                                                                                                                                                                                                                                          .note.big { font-size: 1.15em; }
 
-            .letter-wrapper {
-              max-width: 900px;
-                margin: auto;
-                  display: flex;
-                    flex-direction: column;
-                      gap: 35px;
-                      }
+                                                                                                                                                                                                                                                                                                                                          .note.glow {
+                                                                                                                                                                                                                                                                                                                                            box-shadow: 0 0 30px rgba(255,105,180,0.35);
+                                                                                                                                                                                                                                                                                                                                            }
 
-                      .note {
-                        background: rgba(255,255,255,0.75);
-                          padding: 25px 30px;
-                            border-radius: 24px;
-                              font-size: 1.05em;
-                                line-height: 1.6;
-                                  box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
-                                    backdrop-filter: blur(6px);
-                                      animation: floatIn 1s ease both;
-                                      }
+                                                                                                                                                                                                                                                                                                                                            .signature {
+                                                                                                                                                                                                                                                                                                                                              font-style: italic;
+                                                                                                                                                                                                                                                                                                                                                font-size: 1.1em;
+                                                                                                                                                                                                                                                                                                                                                }
 
-                                      .note.left {
-                                        align-self: flex-start;
-                                          transform: rotate(-1.5deg);
-                                            max-width: 70%;
-                                            }
+                                                                                                                                                                                                                                                                                                                                                /* ===== DESKTOP AJUSTES ===== */
+                                                                                                                                                                                                                                                                                                                                                @media (min-width: 768px) {
+                                                                                                                                                                                                                                                                                                                                                  .note.left,
+                                                                                                                                                                                                                                                                                                                                                    .note.right {
+                                                                                                                                                                                                                                                                                                                                                        max-width: 70%;
+                                                                                                                                                                                                                                                                                                                                                          }
 
-                                            .note.right {
-                                              align-self: flex-end;
-                                                transform: rotate(1.5deg);
-                                                  max-width: 70%;
-                                                  }
+                                                                                                                                                                                                                                                                                                                                                            .note.center {
+                                                                                                                                                                                                                                                                                                                                                                max-width: 85%;
+                                                                                                                                                                                                                                                                                                                                                                  }
+                                                                                                                                                                                                                                                                                                                                                                  }
 
-                                                  .note.center {
-                                                    align-self: center;
-                                                      text-align: center;
-                                                        max-width: 85%;
-                                                        }
+                                                                                                                                                                                                                                                                                                                                                                  /* ===== KEYFRAMES ===== */
+                                                                                                                                                                                                                                                                                                                                                                  @keyframes gradientMove {
+                                                                                                                                                                                                                                                                                                                                                                    0% { background-position: 0% 50%; }
+                                                                                                                                                                                                                                                                                                                                                                      50% { background-position: 100% 50%; }
+                                                                                                                                                                                                                                                                                                                                                                        100% { background-position: 0% 50%; }
+                                                                                                                                                                                                                                                                                                                                                                        }
 
-                                                        .note.big {
-                                                          font-size: 1.15em;
-                                                          }
+                                                                                                                                                                                                                                                                                                                                                                        @keyframes fadeUp {
+                                                                                                                                                                                                                                                                                                                                                                          from { opacity: 0; transform: translateY(25px); }
+                                                                                                                                                                                                                                                                                                                                                                            to { opacity: 1; transform: translateY(0); }
+                                                                                                                                                                                                                                                                                                                                                                            }
 
-                                                          .note.glow {
-                                                            box-shadow: 0 0 30px rgba(255, 105, 180, 0.35);
-                                                            }
+                                                                                                                                                                                                                                                                                                                                                                            @keyframes floatUp {
+                                                                                                                                                                                                                                                                                                                                                                              0% { bottom: -40px; opacity: 1; }
+                                                                                                                                                                                                                                                                                                                                                                                100% { bottom: 100%; opacity: 0; }
+                                                                                                                                                                                                                                                                                                                                                                                }
 
-                                                            .signature {
-                                                              font-style: italic;
-                                                                font-size: 1.1em;
-                                                                }
+                                                                                                                                                                                                                                                                                                                                                                                @keyframes float {
+                                                                                                                                                                                                                                                                                                                                                                                  0% { transform: translateY(0) rotate(-4deg); }
+                                                                                                                                                                                                                                                                                                                                                                                    50% { transform: translateY(-18px) rotate(-4deg); }
+                                                                                                                                                                                                                                                                                                                                                                                      100% { transform: translateY(0) rotate(-4deg); }
+                                                                                                                                                                                                                                                                                                                                                                                      }
 
-                                                                @keyframes floatIn {
-                                                                  from {
-                                                                      opacity: 0;
-                                                                          transform: translateY(20px) scale(0.98);
-                                                                            }
-                                                                              to {
-                                                                                  opacity: 1;
-                                                                                    }
-                                                                                    }
-}
+                                                                                                                                                                                                                                                                                                                                                                                      @keyframes decorFloat {
+                                                                                                                                                                                                                                                                                                                                                                                        0% { transform: translateY(0); }
+                                                                                                                                                                                                                                                                                                                                                                                          100% { transform: translateY(-40px); }
+                                                                                                                                                                                                                                                                                                                                                                                          }
+
+                                                                                                                                                                                                                                                                                                                                                                                          @keyframes floatIn {
+                                                                                                                                                                                                                                                                                                                                                                                            from {
+                                                                                                                                                                                                                                                                                                                                                                                                opacity: 0;
+                                                                                                                                                                                                                                                                                                                                                                                                    transform: translateY(20px) scale(0.98);
+                                                                                                                                                                                                                                                                                                                                                                                                      }
+                                                                                                                                                                                                                                                                                                                                                                                                        to {
+                                                                                                                                                                                                                                                                                                                                                                                                            opacity: 1;
+                                                                                                                                                                                                                                                                                                                                                                                                              }

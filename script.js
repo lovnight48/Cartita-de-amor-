@@ -1,93 +1,77 @@
-const texto = "Tengo algo especial preparado para ti duraznito...";
-let i = 0;
+const intro = document.getElementById("intro");
+const galeria = document.getElementById("galeria");
+const texto = document.getElementById("texto");
+const music = document.getElementById("bg-music");
 
-let musicaIniciada = false;
-const audio = document.getElementById("bg-music");
+let musicPlaying = false;
+
+/* ===== TEXTO ESCRIBIÉNDOSE ===== */
+const textoIntro = "Hice este pequeño rincón solo para ti...";
+let index = 0;
+const typingText = document.getElementById("typing-text");
 
 function escribirTexto() {
-  if (i < texto.length) {
-      document.getElementById("typing-text").innerHTML += texto.charAt(i);
-          i++;
-              setTimeout(escribirTexto, 80);
+  if (index < textoIntro.length) {
+      typingText.textContent += textoIntro.charAt(index);
+          index++;
+              setTimeout(escribirTexto, 60);
                 }
                 }
+                escribirTexto();
 
-                window.onload = () => {
-                  escribirTexto();
-                    setInterval(crearCorazon, 800);
-                    };
+                /* ===== MÚSICA ===== */
+                function iniciarMusica() {
+                  if (!musicPlaying) {
+                      music.play();
+                          musicPlaying = true;
+                            }
+                            }
 
-                    function iniciarMusica() {
-                      if (!musicaIniciada) {
-                          audio.volume = 0;
-                              audio.play();
-                                  musicaIniciada = true;
+                            function toggleMusic() {
+                              if (musicPlaying) {
+                                  music.pause();
+                                    } else {
+                                        music.play();
+                                          }
+                                            musicPlaying = !musicPlaying;
+                                            }
 
-                                      let vol = 0;
-                                          const fade = setInterval(() => {
-                                                if (vol < 0.5) {
-                                                        vol += 0.02;
-                                                                audio.volume = vol;
-                                                                      } else {
-                                                                              clearInterval(fade);
-                                                                                    }
-                                                                                        }, 200);
-                                                                                          }
-                                                                                          }
+                                            /* ===== NAVEGACIÓN ENTRE PANTALLAS ===== */
+                                            function mostrarGaleria() {
+                                              intro.style.opacity = "0";
+                                                intro.style.pointerEvents = "none";
 
-                                                                                          function toggleMusic() {
-                                                                                            if (audio.paused) {
-                                                                                                audio.play();
-                                                                                                  } else {
-                                                                                                      audio.pause();
-                                                                                                        }
-                                                                                                        }
+                                                  setTimeout(() => {
+                                                      intro.style.display = "none";
+                                                          galeria.style.display = "flex";
+                                                              galeria.style.opacity = "1";
+                                                                  galeria.style.pointerEvents = "auto";
+                                                                    }, 800);
+                                                                    }
 
-                                                                                                        function mostrarGaleria() {
-                                                                                                          const intro = document.getElementById("intro");
-                                                                                                            const galeria = document.getElementById("galeria");
+                                                                    function mostrarTexto() {
+                                                                      galeria.style.opacity = "0";
+                                                                        galeria.style.pointerEvents = "none";
 
-                                                                                                              intro.style.opacity = 0;
+                                                                          setTimeout(() => {
+                                                                              galeria.style.display = "none";
+                                                                                  texto.style.display = "flex";
+                                                                                      texto.style.opacity = "1";
+                                                                                          texto.style.pointerEvents = "auto";
+                                                                                            }, 800);
+                                                                                            }
 
-                                                                                                                setTimeout(() => {
-                                                                                                                    intro.style.display = "none";
-                                                                                                                        galeria.style.opacity = 1;
-                                                                                                                            galeria.style.pointerEvents = "auto";
-                                                                                                                              }, 1200);
-                                                                                                                              }
+                                                                                            /* ===== CORAZONES ===== */
+                                                                                            function crearCorazon() {
+                                                                                              const heart = document.createElement("div");
+                                                                                                heart.classList.add("heart");
+                                                                                                  heart.style.left = Math.random() * 100 + "vw";
+                                                                                                    heart.style.animationDuration = 5 + Math.random() * 4 + "s";
+                                                                                                      document.getElementById("hearts-container").appendChild(heart);
 
-                                                                                                                              function mostrarTexto() {
-                                                                                                                                const galeria = document.getElementById("galeria");
-                                                                                                                                  const texto = document.getElementById("texto");
+                                                                                                        setTimeout(() => {
+                                                                                                            heart.remove();
+                                                                                                              }, 8000);
+                                                                                                              }
 
-                                                                                                                                    galeria.style.opacity = 0;
-
-                                                                                                                                      setTimeout(() => {
-                                                                                                                                          galeria.style.display = "none";
-                                                                                                                                              texto.style.opacity = 1;
-                                                                                                                                                  texto.style.pointerEvents = "auto";
-                                                                                                                                                    }, 1200);
-                                                                                                                                                    }
-
-                                                                                                                                                    function crearCorazon() {
-                                                                                                                                                      const heart = document.createElement("div");
-                                                                                                                                                        heart.classList.add("heart");
-
-                                                                                                                                                          heart.style.left = Math.random() * 100 + "vw";
-                                                                                                                                                            heart.style.animationDuration = (6 + Math.random() * 5) + "s";
-                                                                                                                                                              heart.style.opacity = Math.random();
-
-                                                                                                                                                                document.getElementById("hearts-container").appendChild(heart);
-
-                                                                                                                                                                  setTimeout(() => {
-                                                                                                                                                                      heart.remove();
-                                                                                                                                                                        }, 9000);
-                                                                                                                                                                        }
-
-                                                                                                                                                                        /* Parallax fake suave */
-                                                                                                                                                                        document.addEventListener("mousemove", (e) => {
-                                                                                                                                                                          const decor = document.querySelector(".decor-layer");
-                                                                                                                                                                            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-                                                                                                                                                                              const y = (e.clientY / window.innerHeight - 0.5) * 20;
-                                                                                                                                                                                decor.style.transform = `translate(${x}px, ${y}px)`;
-                                                                                                                                                                                });
+                                                                                                              setInterval(crearCorazon, 600);
