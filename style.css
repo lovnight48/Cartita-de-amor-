@@ -1,332 +1,218 @@
-/* ===== RESET & BODY ===== */
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
-  }
+}
 
-  body {
-    margin: 0;
-      font-family: 'Arial', sans-serif;
-        background: linear-gradient(-45deg, #fde2e4, #f9c5d1, #fbc2eb, #fad0c4);
-          background-size: 400% 400%;
-            animation: gradientMove 15s ease infinite;
-              min-height: 100vh;
-                overflow-x: hidden;
-                }
+/* ===== BODY ===== */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(-45deg, #fde2e4, #f9c5d1, #fbc2eb, #fad0c4);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-                /* ===== DECORACIÓN FONDO ===== */
-                .decor-layer {
-                  position: fixed;
-                    top: 0;
-                      left: 0;
-                        width: 100%;
-                          height: 100%;
-                            pointer-events: none;
-                              background:
-                                  radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12), transparent 40%),
-                                      radial-gradient(circle at 80% 60%, rgba(255,182,193,0.18), transparent 45%),
-                                          radial-gradient(circle at 50% 80%, rgba(255,255,255,0.1), transparent 40%);
-                                            filter: blur(30px);
-                                              animation: decorFloat 18s ease-in-out infinite alternate;
-                                                z-index: 0;
-                                                }
+/* ===== DECORACIÓN FONDO ===== */
+.decor-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.12), transparent 40%),
+    radial-gradient(circle at 80% 60%, rgba(255,182,193,0.18), transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.1), transparent 40%);
+  filter: blur(30px);
+  animation: decorFloat 18s ease-in-out infinite alternate;
+  z-index: 0;
+}
 
-                                                /* ===== BOTÓN MÚSICA ===== */
-                                                #music-btn {
-                                                  position: fixed;
-                                                    top: 16px;
-                                                      right: 16px;
-                                                        width: 46px;
-                                                          height: 46px;
-                                                            border-radius: 50%;
-                                                              background: rgba(255,255,255,0.35);
-                                                                backdrop-filter: blur(10px);
-                                                                  display: flex;
-                                                                    align-items: center;
-                                                                      justify-content: center;
-                                                                        font-size: 22px;
-                                                                          cursor: pointer;
-                                                                            box-shadow: 0 8px 22px rgba(255,111,145,0.45);
-                                                                              transition: transform 0.4s ease, box-shadow 0.4s ease;
-                                                                                z-index: 5;
-                                                                                }
+/* ===== BOTÓN MÚSICA ===== */
+#music-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(255,111,145,0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  z-index: 5;
+}
 
-                                                                                #music-btn:hover {
-                                                                                  transform: scale(1.15);
-                                                                                    box-shadow: 0 14px 35px rgba(255,111,145,0.65);
-                                                                                    }
+#music-btn:hover {
+  transform: scale(1.15);
+}
 
-                                                                                    /* ===== SCREENS ===== */
-                                                                                    .screen {
-                                                                                      position: absolute;
-                                                                                        width: 100%;
-                                                                                          min-height: 100vh;
-                                                                                            display: flex;
-                                                                                              flex-direction: column;
-                                                                                                justify-content: center;
-                                                                                                  align-items: center;
-                                                                                                    text-align: center;
-                                                                                                      padding: 24px;
-                                                                                                        transition: opacity 1.5s ease;
-                                                                                                          z-index: 1;
-                                                                                                          }
+/* ===== SCREENS ===== */
+.screen {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  z-index: 1;
+}
 
-                                                                                                          .screen-intro { opacity: 1; }
-                                                                                                          .screen-galeria,
-                                                                                                          .screen-texto {
-                                                                                                            opacity: 0;
-                                                                                                              pointer-events: none;
-                                                                                                              }
+.screen-intro {
+  display: flex;
+}
 
-                                                                                                              /* ===== INTRO ===== */
-                                                                                                              .title {
-                                                                                                                color: #ff6f91;
-                                                                                                                  font-size: clamp(32px, 6vw, 46px);
-                                                                                                                    margin-bottom: 12px;
-                                                                                                                      text-shadow: 0 0 18px rgba(255,111,145,0.45);
-                                                                                                                      }
+/* ===== INTRO ===== */
+.title {
+  color: #ff6f91;
+  font-size: clamp(32px, 6vw, 46px);
+  text-shadow: 0 0 18px rgba(255,111,145,0.45);
+}
 
-                                                                                                                      .intro-text {
-                                                                                                                        color: #555;
-                                                                                                                          font-size: clamp(18px, 4.5vw, 22px);
-                                                                                                                            max-width: 480px;
-                                                                                                                              margin: 10px auto 25px;
-                                                                                                                              }
+.intro-text {
+  color: #555;
+  font-size: clamp(18px, 4.5vw, 22px);
+  max-width: 480px;
+  margin: 12px auto 28px;
+}
 
-                                                                                                                              /* ===== BOTONES ===== */
-                                                                                                                              .main-btn {
-                                                                                                                                background: linear-gradient(135deg, #ff9a9e, #fecfef);
-                                                                                                                                  border: none;
-                                                                                                                                    padding: 16px 32px;
-                                                                                                                                      border-radius: 40px;
-                                                                                                                                        color: #fff;
-                                                                                                                                          font-size: 18px;
-                                                                                                                                            cursor: pointer;
-                                                                                                                                              box-shadow: 0 8px 22px rgba(255,111,145,0.35);
-                                                                                                                                                transition: transform 0.4s ease, box-shadow 0.4s ease;
-                                                                                                                                                }
+/* ===== BOTONES ===== */
+.main-btn {
+  background: linear-gradient(135deg, #ff9a9e, #fecfef);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 40px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(255,111,145,0.35);
+  transition: transform 0.4s ease;
+}
 
-                                                                                                                                                .main-btn:hover {
-                                                                                                                                                  transform: scale(1.1);
-                                                                                                                                                    box-shadow: 0 14px 35px rgba(255,111,145,0.55);
-                                                                                                                                                    }
+.main-btn:hover {
+  transform: scale(1.1);
+}
 
-                                                                                                                                                    .next-btn {
-                                                                                                                                                      margin-top: 32px;
-                                                                                                                                                      }
+.next-btn {
+  margin-top: 32px;
+}
 
-                                                                                                                                                      /* ===== GALERÍA ===== */
-                                                                                                                                                      .polaroid-container {
-                                                                                                                                                        display: flex;
-                                                                                                                                                          gap: 30px;
-                                                                                                                                                            flex-wrap: wrap;
-                                                                                                                                                              justify-content: center;
-                                                                                                                                                              }
+/* ===== GALERÍA ===== */
+.polaroid-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-                                                                                                                                                              .polaroid {
-                                                                                                                                                                background: #fff;
-                                                                                                                                                                  padding: 18px 18px 34px;
-                                                                                                                                                                    border-radius: 18px;
-                                                                                                                                                                      box-shadow:
-                                                                                                                                                                          0 18px 40px rgba(0,0,0,0.25),
-                                                                                                                                                                              0 0 25px rgba(255,182,193,0.35);
-                                                                                                                                                                                transform: rotate(-4deg);
-                                                                                                                                                                                  animation: float 6s ease-in-out infinite;
-                                                                                                                                                                                  }
+.polaroid {
+  background: #fff;
+  padding: 18px 18px 34px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  animation: float 6s ease-in-out infinite;
+}
 
-                                                                                                                                                                                  .polaroid:nth-child(2) {
-                                                                                                                                                                                    transform: rotate(3deg);
-                                                                                                                                                                                      animation-delay: 1.5s;
-                                                                                                                                                                                      }
+.polaroid img {
+  width: min(260px, 80vw);
+  border-radius: 10px;
+}
 
-                                                                                                                                                                                      .polaroid:nth-child(3) {
-                                                                                                                                                                                        transform: rotate(-2deg);
-                                                                                                                                                                                          animation-delay: 3s;
-                                                                                                                                                                                          }
+/* ===== TEXTO GLASS ===== */
+.glass {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  padding: 32px;
+  max-width: 600px;
+}
 
-                                                                                                                                                                                          .polaroid img {
-                                                                                                                                                                                            width: min(260px, 80vw);
-                                                                                                                                                                                              height: auto;
-                                                                                                                                                                                                border-radius: 10px;
-                                                                                                                                                                                                }
+.sentimental {
+  font-size: clamp(18px, 4.5vw, 22px);
+  color: #444;
+  margin: 18px 0;
+}
 
-                                                                                                                                                                                                /* ===== TEXTO GLASS ===== */
-                                                                                                                                                                                                .glass {
-                                                                                                                                                                                                  background: rgba(255,255,255,0.25);
-                                                                                                                                                                                                    backdrop-filter: blur(12px);
-                                                                                                                                                                                                      border-radius: 28px;
-                                                                                                                                                                                                        padding: 32px;
-                                                                                                                                                                                                          max-width: 600px;
-                                                                                                                                                                                                            box-shadow:
-                                                                                                                                                                                                                0 15px 45px rgba(0,0,0,0.15),
-                                                                                                                                                                                                                    0 0 30px rgba(255,182,193,0.45);
-                                                                                                                                                                                                                    }
+.highlight {
+  color: #ff6f91;
+  font-weight: bold;
+}
 
-                                                                                                                                                                                                                    .sentimental {
-                                                                                                                                                                                                                      color: #444;
-                                                                                                                                                                                                                        font-size: clamp(18px, 4.5vw, 22px);
-                                                                                                                                                                                                                          line-height: 1.5;
-                                                                                                                                                                                                                            margin: 18px 0;
-                                                                                                                                                                                                                            }
+/* ===== CORAZONES ===== */
+#hearts-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+}
 
-                                                                                                                                                                                                                            .highlight {
-                                                                                                                                                                                                                              color: #ff6f91;
-                                                                                                                                                                                                                                font-weight: bold;
-                                                                                                                                                                                                                                  font-size: clamp(20px, 5vw, 24px);
-                                                                                                                                                                                                                                    text-shadow: 0 0 15px rgba(255,111,145,0.6);
-                                                                                                                                                                                                                                    }
+.heart {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: pink;
+  transform: rotate(45deg);
+  animation: floatUp 7s linear infinite;
+}
 
-                                                                                                                                                                                                                                    /* ===== ANIMACIONES TEXTO ===== */
-                                                                                                                                                                                                                                    .fade-in {
-                                                                                                                                                                                                                                      opacity: 0;
-                                                                                                                                                                                                                                        transform: translateY(25px);
-                                                                                                                                                                                                                                          animation: fadeUp 1.4s ease forwards;
-                                                                                                                                                                                                                                          }
+/* ===== CARTA ===== */
+.transition-love {
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, #ffd6e8);
+}
 
-                                                                                                                                                                                                                                          .delay-1 { animation-delay: 0.5s; }
-                                                                                                                                                                                                                                          .delay-2 { animation-delay: 1.2s; }
-                                                                                                                                                                                                                                          .delay-3 { animation-delay: 1.9s; }
+.love-letter {
+  display: none; /* CLAVE */
+  background: linear-gradient(180deg, #ffd6e8, #ffeaf4);
+  padding: 70px 16px;
+  z-index: 3;
+}
 
-                                                                                                                                                                                                                                          /* ===== CORAZONES ===== */
-                                                                                                                                                                                                                                          #hearts-container {
-                                                                                                                                                                                                                                            position: fixed;
-                                                                                                                                                                                                                                              width: 100%;
-                                                                                                                                                                                                                                                height: 100%;
-                                                                                                                                                                                                                                                  pointer-events: none;
-                                                                                                                                                                                                                                                    overflow: hidden;
-                                                                                                                                                                                                                                                      z-index: 2;
-                                                                                                                                                                                                                                                      }
+.letter-wrapper {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
 
-                                                                                                                                                                                                                                                      .heart {
-                                                                                                                                                                                                                                                        position: absolute;
-                                                                                                                                                                                                                                                          width: 22px;
-                                                                                                                                                                                                                                                            height: 22px;
-                                                                                                                                                                                                                                                              background: pink;
-                                                                                                                                                                                                                                                                transform: rotate(45deg);
-                                                                                                                                                                                                                                                                  animation: floatUp 7s linear infinite;
-                                                                                                                                                                                                                                                                    box-shadow: 0 0 15px rgba(255,182,193,0.7);
-                                                                                                                                                                                                                                                                    }
+.note {
+  background: rgba(255,255,255,0.75);
+  padding: 22px 26px;
+  border-radius: 22px;
+  line-height: 1.6;
+}
 
-                                                                                                                                                                                                                                                                    .heart::before,
-                                                                                                                                                                                                                                                                    .heart::after {
-                                                                                                                                                                                                                                                                      content: '';
-                                                                                                                                                                                                                                                                        width: 22px;
-                                                                                                                                                                                                                                                                          height: 22px;
-                                                                                                                                                                                                                                                                            background: pink;
-                                                                                                                                                                                                                                                                              border-radius: 50%;
-                                                                                                                                                                                                                                                                                position: absolute;
-                                                                                                                                                                                                                                                                                }
+.note.center {
+  text-align: center;
+}
 
-                                                                                                                                                                                                                                                                                .heart::before { top: -11px; left: 0; }
-                                                                                                                                                                                                                                                                                .heart::after { left: -11px; top: 0; }
+/* ===== ANIMACIONES ===== */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
-                                                                                                                                                                                                                                                                                /* ===== TRANSICIÓN A CARTA ===== */
-                                                                                                                                                                                                                                                                                .transition-love {
-                                                                                                                                                                                                                                                                                  height: 120px;
-                                                                                                                                                                                                                                                                                    background: linear-gradient(to bottom, transparent, #ffd6e8);
-                                                                                                                                                                                                                                                                                      filter: blur(4px);
-                                                                                                                                                                                                                                                                                      }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
 
-                                                                                                                                                                                                                                                                                      /* ===== CARTA ===== */
-                                                                                                                                                                                                                                                                                      .love-letter {
-                                                                                                                                                                                                                                                                                        position: relative;
-                                                                                                                                                                                                                                                                                          z-index: 3;
-                                                                                                                                                                                                                                                                                            background: linear-gradient(180deg, #ffd6e8, #ffeaf4);
-                                                                                                                                                                                                                                                                                              padding: 70px 16px;
-                                                                                                                                                                                                                                                                                              }
+@keyframes floatUp {
+  from { bottom: -40px; opacity: 1; }
+  to { bottom: 100%; opacity: 0; }
+}
 
-                                                                                                                                                                                                                                                                                              .letter-wrapper {
-                                                                                                                                                                                                                                                                                                max-width: 900px;
-                                                                                                                                                                                                                                                                                                  margin: auto;
-                                                                                                                                                                                                                                                                                                    display: flex;
-                                                                                                                                                                                                                                                                                                      flex-direction: column;
-                                                                                                                                                                                                                                                                                                        gap: 28px;
-                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                        .note {
-                                                                                                                                                                                                                                                                                                          background: rgba(255,255,255,0.75);
-                                                                                                                                                                                                                                                                                                            padding: 22px 26px;
-                                                                                                                                                                                                                                                                                                              border-radius: 22px;
-                                                                                                                                                                                                                                                                                                                font-size: 1.05em;
-                                                                                                                                                                                                                                                                                                                  line-height: 1.6;
-                                                                                                                                                                                                                                                                                                                    box-shadow: 0 20px 40px rgba(255,105,180,0.15);
-                                                                                                                                                                                                                                                                                                                      backdrop-filter: blur(6px);
-                                                                                                                                                                                                                                                                                                                        animation: floatIn 1s ease both;
-                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                        .note.left {
-                                                                                                                                                                                                                                                                                                                          align-self: flex-start;
-                                                                                                                                                                                                                                                                                                                            transform: rotate(-1.5deg);
-                                                                                                                                                                                                                                                                                                                              max-width: 100%;
-                                                                                                                                                                                                                                                                                                                              }
-
-                                                                                                                                                                                                                                                                                                                              .note.right {
-                                                                                                                                                                                                                                                                                                                                align-self: flex-end;
-                                                                                                                                                                                                                                                                                                                                  transform: rotate(1.5deg);
-                                                                                                                                                                                                                                                                                                                                    max-width: 100%;
-                                                                                                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                                                                                                    .note.center {
-                                                                                                                                                                                                                                                                                                                                      align-self: center;
-                                                                                                                                                                                                                                                                                                                                        text-align: center;
-                                                                                                                                                                                                                                                                                                                                          max-width: 100%;
-                                                                                                                                                                                                                                                                                                                                          }
-
-                                                                                                                                                                                                                                                                                                                                          .note.big { font-size: 1.15em; }
-
-                                                                                                                                                                                                                                                                                                                                          .note.glow {
-                                                                                                                                                                                                                                                                                                                                            box-shadow: 0 0 30px rgba(255,105,180,0.35);
-                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                            .signature {
-                                                                                                                                                                                                                                                                                                                                              font-style: italic;
-                                                                                                                                                                                                                                                                                                                                                font-size: 1.1em;
-                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                /* ===== DESKTOP AJUSTES ===== */
-                                                                                                                                                                                                                                                                                                                                                @media (min-width: 768px) {
-                                                                                                                                                                                                                                                                                                                                                  .note.left,
-                                                                                                                                                                                                                                                                                                                                                    .note.right {
-                                                                                                                                                                                                                                                                                                                                                        max-width: 70%;
-                                                                                                                                                                                                                                                                                                                                                          }
-
-                                                                                                                                                                                                                                                                                                                                                            .note.center {
-                                                                                                                                                                                                                                                                                                                                                                max-width: 85%;
-                                                                                                                                                                                                                                                                                                                                                                  }
-                                                                                                                                                                                                                                                                                                                                                                  }
-
-                                                                                                                                                                                                                                                                                                                                                                  /* ===== KEYFRAMES ===== */
-                                                                                                                                                                                                                                                                                                                                                                  @keyframes gradientMove {
-                                                                                                                                                                                                                                                                                                                                                                    0% { background-position: 0% 50%; }
-                                                                                                                                                                                                                                                                                                                                                                      50% { background-position: 100% 50%; }
-                                                                                                                                                                                                                                                                                                                                                                        100% { background-position: 0% 50%; }
-                                                                                                                                                                                                                                                                                                                                                                        }
-
-                                                                                                                                                                                                                                                                                                                                                                        @keyframes fadeUp {
-                                                                                                                                                                                                                                                                                                                                                                          from { opacity: 0; transform: translateY(25px); }
-                                                                                                                                                                                                                                                                                                                                                                            to { opacity: 1; transform: translateY(0); }
-                                                                                                                                                                                                                                                                                                                                                                            }
-
-                                                                                                                                                                                                                                                                                                                                                                            @keyframes floatUp {
-                                                                                                                                                                                                                                                                                                                                                                              0% { bottom: -40px; opacity: 1; }
-                                                                                                                                                                                                                                                                                                                                                                                100% { bottom: 100%; opacity: 0; }
-                                                                                                                                                                                                                                                                                                                                                                                }
-
-                                                                                                                                                                                                                                                                                                                                                                                @keyframes float {
-                                                                                                                                                                                                                                                                                                                                                                                  0% { transform: translateY(0) rotate(-4deg); }
-                                                                                                                                                                                                                                                                                                                                                                                    50% { transform: translateY(-18px) rotate(-4deg); }
-                                                                                                                                                                                                                                                                                                                                                                                      100% { transform: translateY(0) rotate(-4deg); }
-                                                                                                                                                                                                                                                                                                                                                                                      }
-
-                                                                                                                                                                                                                                                                                                                                                                                      @keyframes decorFloat {
-                                                                                                                                                                                                                                                                                                                                                                                        0% { transform: translateY(0); }
-                                                                                                                                                                                                                                                                                                                                                                                          100% { transform: translateY(-40px); }
-                                                                                                                                                                                                                                                                                                                                                                                          }
-
-                                                                                                                                                                                                                                                                                                                                                                                          @keyframes floatIn {
-                                                                                                                                                                                                                                                                                                                                                                                            from {
-                                                                                                                                                                                                                                                                                                                                                                                                opacity: 0;
-                                                                                                                                                                                                                                                                                                                                                                                                    transform: translateY(20px) scale(0.98);
-                                                                                                                                                                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                                                                                                                                                                        to {
-                                                                                                                                                                                                                                                                                                                                                                                                            opacity: 1;
-                                                                                                                                                                                                                                                                                                                                                                                                              }
+@keyframes decorFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
