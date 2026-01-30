@@ -8,16 +8,18 @@ body {
   overflow-x: hidden;
 }
 
+/* Fondo */
 .decor-layer {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 30%,rgba(255,255,255,.12),transparent 40%),
-    radial-gradient(circle at 80% 60%,rgba(255,182,193,.18),transparent 45%);
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.15),transparent 40%),
+    radial-gradient(circle at 80% 60%,rgba(255,182,193,.25),transparent 45%);
   filter: blur(30px);
   z-index: 0;
 }
 
+/* Música */
 #music-btn {
   position: fixed;
   top: 16px;
@@ -25,8 +27,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: rgba(255,255,255,.35);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,15 +35,16 @@ body {
   z-index: 10;
 }
 
+/* Pantallas */
 .screen {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 24px;
   text-align: center;
+  padding: 24px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -56,6 +58,7 @@ body {
   pointer-events: auto;
 }
 
+/* Textos */
 .title {
   font-size: 42px;
   color: #ff6f91;
@@ -67,15 +70,17 @@ body {
 }
 
 .main-btn {
-  margin-top: 20px;
+  margin-top: 24px;
   padding: 16px 32px;
   border-radius: 30px;
   border: none;
   background: linear-gradient(135deg,#ff9a9e,#fecfef);
   color: #fff;
   font-size: 18px;
+  cursor: pointer;
 }
 
+/* Galería */
 .polaroid-container {
   display: flex;
   gap: 32px;
@@ -95,8 +100,9 @@ body {
   border-radius: 10px;
 }
 
+/* Caja vidrio */
 .glass {
-  background: rgba(255,255,255,.25);
+  background: rgba(255,255,255,.3);
   backdrop-filter: blur(12px);
   padding: 32px;
   border-radius: 24px;
@@ -105,32 +111,51 @@ body {
 
 .sentimental {
   font-size: 20px;
+  margin: 16px 0;
 }
 
+.highlight {
+  color: #ff6f91;
+  font-weight: bold;
+}
+
+/* Carta */
 .transition-love {
   height: 120px;
 }
 
 .love-letter {
-  position: relative;
-  padding: 80px 20px;
   background: linear-gradient(180deg,#ffd6e8,#ffeaf4);
-  z-index: 3;
+  padding: 80px 20px;
+}
+
+.letter-wrapper {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .note {
-  background: rgba(255,255,255,.8);
-  padding: 24px;
-  border-radius: 20px;
-  margin: 20px auto;
-  max-width: 700px;
+  background: rgba(255,255,255,.85);
+  padding: 24px 30px;
+  border-radius: 22px;
+  font-size: 1.05em;
 }
+
+.note.left { align-self: flex-start; max-width: 70%; }
+.note.right { align-self: flex-end; max-width: 70%; }
+.note.center { align-self: center; max-width: 85%; text-align: center; }
+.note.big { font-size: 1.15em; }
+.note.glow { box-shadow: 0 0 30px rgba(255,105,180,.4); }
 
 .signature {
-  text-align: right;
   font-style: italic;
+  text-align: right;
 }
 
+/* Animaciones */
 @keyframes gradientMove {
   0% {background-position:0% 50%;}
   50% {background-position:100% 50%;}
