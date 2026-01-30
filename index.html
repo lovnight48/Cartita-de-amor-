@@ -2,43 +2,47 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para mi antito 💖</title>
+  <title>Para Ti 💖</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- Fondo decorativo -->
+  <!-- Decoración fondo -->
   <div class="decor-layer"></div>
 
-  <!-- Música -->
+  <!-- Audio oculto -->
   <audio id="bg-music" src="temachii - may you never .mp3" loop></audio>
-  <div id="music-btn" onclick="toggleMusic()">🎵</div>
 
-  <!-- INTRO -->
-  <section id="intro" class="screen show">
+  <!-- Botón música -->
+  <div id="music-btn" onclick="toggleMusic()">
+    🎵
+  </div>
+
+  <!-- Pantalla 1 -->
+  <section class="screen screen-intro" id="intro">
     <h1 class="title">Hola amor 💗</h1>
-    <p id="typing-text" class="intro-text">
-      Hice esto con mucho cariño… solo para ti.
-    </p>
+    <p id="typing-text" class="intro-text"></p>
     <button class="main-btn" onclick="mostrarGaleria(); iniciarMusica();">
       Ver recuerdos
     </button>
   </section>
 
-  <!-- GALERÍA -->
-  <section id="galeria" class="screen">
+  <!-- Pantalla 2 -->
+  <section class="screen screen-galeria" id="galeria">
     <div class="polaroid-container">
+
       <div class="polaroid">
         <img src="IMG_20251106_164405_188.webp">
       </div>
+
       <div class="polaroid">
         <img src="IMG_20251111_201622_652.webp">
       </div>
+
       <div class="polaroid">
         <img src="IMG_20251113_222809_373.webp">
       </div>
+
     </div>
 
     <button class="main-btn next-btn" onclick="mostrarTexto()">
@@ -46,77 +50,32 @@
     </button>
   </section>
 
-  <!-- TEXTO -->
-  <section id="texto" class="screen">
+  <!-- Pantalla 3 -->
+  <section class="screen screen-texto" id="texto">
     <div class="glass">
-      <h2>Esto es solo para ti 🌸</h2>
 
-      <p class="sentimental">
-        No sabía cómo decir todo lo que siento,  
-        así que decidí crear algo que hablara por mí.
+      <h2 class="fade-in">Esto es solo para ti 🌸</h2>
+
+      <p class="sentimental fade-in delay-1">
+        No sé cómo decir todo lo que siento con palabras,
+        pero quería crear algo pequeño y bonito para recordarte
+        lo importante que eres para mí.
       </p>
 
-      <p class="sentimental">
-        Cada detalle está pensado con amor,  
-        como cada momento que compartimos.
+      <p class="sentimental fade-in delay-2">
+        Cada momento contigo se queda guardado en mi corazón,
+        y ojalá esta sorpresa te saque una sonrisa
+        como tú me sacas una a mí todos los días.
       </p>
 
-      <p class="sentimental highlight">
-        Gracias por existir en mi vida 💗
+      <p class="sentimental highlight fade-in delay-3">
+        Gracias por existir en mi vida 💞
       </p>
 
-      <button class="main-btn next-btn" onclick="mostrarCarta()">
-        Leer la carta 💌
-      </button>
     </div>
   </section>
 
-  <!-- TRANSICIÓN SUAVE -->
-  <div class="transition-love"></div>
-
-  <!-- CARTA -->
-  <section id="carta" class="love-letter">
-    <div class="letter-wrapper">
-
-      <div class="note left">Hola Melocotonsito,</div>
-
-      <div class="note center big">
-        Nunca fuimos muy comunicativos, y a veces fuimos inmaduros.
-        Nos enojamos por cosas pequeñas y sin querer nos lastimamos.
-      </div>
-
-      <div class="note right">
-        Muchas veces no te conté lo que me molestaba y te culpé
-        cuando en realidad nada fue tu culpa.
-      </div>
-
-      <div class="note center">
-        Perdón por cómo me comporté antes.
-        Quiero que esto sea más que palabras.
-      </div>
-
-      <div class="note left big">
-        Cada parte consciente de mi corazón quiere que sepas
-        que sigo aprendiendo a amar.
-      </div>
-
-      <div class="note right">
-        Cada día intento ser mejor persona y mejor novio.
-      </div>
-
-      <div class="note center big glow">
-        Mi corazón es tuyo,  
-        y si algún día te falta un pedacito,
-        yo sacaré uno del mío para dártelo.
-      </div>
-
-      <div class="note right signature">
-        Gracias por todo,<br>
-        tu hermoso y futuro esposo.
-      </div>
-
-    </div>
-  </section>
+  <div id="hearts-container"></div>
 
   <script src="script.js"></script>
 </body>
