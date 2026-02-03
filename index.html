@@ -6,88 +6,18 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Carta inicial -->
-  <div class="envelope" id="envelope" onclick="abrirCarta()">
-    <div class="flap"></div>
-      <div class="letter-text">Tócame 💌</div>
-      </div>-->
 
-  <!-- Decoración fondo -->
-  <div class="decor-layer"></div>
-
-  <!-- Audio oculto -->
-  <audio id="bg-music" src="melanie-martinez-possession-official-audio_9IdCLJZi.mp3" loop></audio>
-
-  <!-- Botón música -->
-  <div id="music-btn" onclick="toggleMusic()">
-    🎵
+  <div class="card" id="card">
+    <h1>Hola 💗</h1>
+    <p id="typing-text"></p>
+    <button onclick="mostrarSorpresa()">Abrir sorpresa</button>
   </div>
 
-  <!-- Pantalla 1 -->
-  <section class="screen screen-intro" id="intro" style="display:none;">
-    <h1 class="title">Hola amor 💗</h1>
-    <p id="typing-text" class="intro-text"></p>
-    <button class="main-btn" onclick="mostrarGaleria(); iniciarMusica();">
-      Ver recuerdos
-    </button>
-  </section>
-
-  <!-- Pantalla 2 -->
-  <section class="screen screen-galeria" id="galeria">
-    <div class="polaroid-container">
-
-      <div class="polaroid">
-        <img src="IMG_20251106_164405_188.webp">
-      </div>
-
-      <div class="polaroid">
-        <img src="IMG_20251111_201622_652.webp">
-      </div>
-
-      <div class="polaroid">
-        <img src="IMG_20251113_222809_373.webp">
-      </div>
-
-    </div>
-
-    <button class="main-btn next-btn" onclick="mostrarTexto()">
-      Siguiente 💞
-    </button>
-  </section>
-
-  <!-- Pantalla 3 -->
-  <section class="screen screen-texto" id="texto">
-    <div class="glass">
-
-      <h2 class="fade-in">Esto es solo para ti 🌸</h2>
-
-      <p class="sentimental fade-in delay-1">
-        No sé cómo decir todo lo que siento con palabras,
-        pero quería crear algo pequeño y bonito para recordarte
-        lo importante que eres para mí. 
-      </p>
-
-      <p class="sentimental fade-in delay-2">
-        Cada momento contigo se queda guardado en mi corazón,
-        y ojalá esta sorpresa te saque una sonrisa
-        como tú me sacas una a mí todos los días.
-        </p>
-
-       <p class="sentimental fade-in delay-3">
-        Quiero que sepas que te veo tal como eres, y que eso es algo muy bonito para mí.
-        Me gusta tu forma única de sentir, de pensar y de ver el mundo A veces no siempre sabemos cómo decirnos las cosas, pero mi intención contigo siempre es cuidarte, respetarte y darte tranquilidad.
-        No quiero cambiarte, quiero entenderte y caminar a tu ritmo Gracias por ser tú, por tu sensibilidad, tu honestidad y tu manera tan especial de amar.
-        Aquí tienes un lugar seguro, conmigo. Siempre.
-      </p>
-
-      <p class="sentimental highlight fade-in delay-3">
-        Gracias por existir en mi vida 💞
-      </p>
-
-    </div>
-  </section>
-
-  <div id="hearts-container"></div>
+  <div class="sorpresa" id="sorpresa">
+    <h2>Esto es solo para ti 🌸</h2>
+    <p>Eres alguien muy especial para mí</p>
+    <img src="img/foto1.jpg" alt="Recuerdo">
+  </div>
 
   <script src="script.js"></script>
 </body>
