@@ -91,3 +91,13 @@ document.addEventListener("mousemove", (e) => {
   const y = (e.clientY / window.innerHeight - 0.5) * 20;
   decor.style.transform = `translate(${x}px, ${y}px)`;
 });
+function abrirCarta() {
+    const envelope = document.getElementById("envelope");
+      envelope.classList.add("open");
+
+        setTimeout(() => {
+            envelope.style.display = "none";
+                document.getElementById("intro").style.display = "flex";
+                  }, 800);
+                  }
+}

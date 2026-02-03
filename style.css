@@ -234,3 +234,49 @@ body {
   0% { transform: translateY(0); }
   100% { transform: translateY(-40px); }
 }
+/* SOBRE */
+.envelope {
+  position: fixed;
+    width: 230px;
+      height: 150px;
+        background: #ff9ec6;
+          border-radius: 12px;
+            top: 50%;
+              left: 50%;
+                transform: translate(-50%, -50%);
+                  cursor: pointer;
+                    display: flex;
+                      justify-content: center;
+                        align-items: center;
+                          box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+                            z-index: 999;
+                            }
+
+                            /* Tapa */
+                            .flap {
+                              position: absolute;
+                                top: 0;
+                                  width: 0;
+                                    height: 0;
+                                      border-left: 115px solid transparent;
+                                        border-right: 115px solid transparent;
+                                          border-bottom: 75px solid #ff6fa1;
+                                            transform-origin: top;
+                                              transition: 0.8s;
+                                              }
+
+                                              .letter-text {
+                                                color: white;
+                                                  font-size: 20px;
+                                                    z-index: 2;
+                                                    }
+
+                                                    /* Animación abrir */
+                                                    .envelope.open .flap {
+                                                      transform: rotateX(180deg);
+                                                      }
+
+                                                      .envelope.open {
+                                                        transform: translate(-50%, -50%) scale(0);
+                                                          transition: 0.8s;
+                                                          }
